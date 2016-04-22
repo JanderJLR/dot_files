@@ -15,7 +15,7 @@ cmd_spotifyNext = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify
 cmd_spotifyPlayPause = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause > /dev/null" 
 
 main = do
-    xmproc <- spawnPipe "/home/aren/.cabal/bin/xmobar /home/aren/.xmobarrc"
+    xmproc <- spawnPipe "/home/jason/.cabal/bin/xmobar /home/jason/.xmobarrc"
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> manageHook defaultConfig
         , layoutHook = avoidStruts $ layoutHook defaultConfig
@@ -34,4 +34,6 @@ main = do
         , ((mod4Mask .|. shiftMask, xK_Left), spawn cmd_spotifyPrevious)
         , ((mod4Mask .|. shiftMask, xK_Right), spawn cmd_spotifyNext)
         , ((mod4Mask .|. shiftMask, xK_p), spawn cmd_spotifyPlayPause)
+        , ((mod4Mask, xK_b), sendMessage ToggleStruts)
+        , ((mod4Mask, xK_a), spawn cmd_lock)
         ]

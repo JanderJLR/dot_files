@@ -108,6 +108,6 @@ fi
 
 #PYTHONPATH="${PYTHONPATH}:/home/aren/Work/rvi_backend"
 #export PYTHONPATH
-PATH="$PATH:/home/jason/.cabal/bin"
+PATH=$PATH:/home/jason/.cabal/bin
 export PATH
 export QT_SELECT=5
