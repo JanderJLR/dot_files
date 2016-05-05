@@ -16,7 +16,7 @@ tagsFile=~/.tags
 #   generate the tags file from.  This should be a full pathname if you want
 #   it to work from within any directory when you use the tags facility.
 #
-baseDir=/home/dmies/ngi1/Full_Source_1.14.10
+baseDir=/home/jason/ngi1/Full_Source_1.14.10
 
 #
 # Go generate the tags file for the specified code tree.
