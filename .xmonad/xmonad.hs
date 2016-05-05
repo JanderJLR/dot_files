@@ -37,7 +37,7 @@ import XMonad.Layout.LayoutModifier
 -------------------------------------------------------------------------------
 -- Main --
 main = do
-    xmproc <- spawnPipe "/home/aren/.cabal/bin/xmobar /home/aren/.xmobarrc"
+    xmproc <- spawnPipe "/home/jason/.cabal/bin/xmobar /home/jason/.xmobarrc"
     xmonad $ myConfig { logHook = dynamicLogWithPP xmobarPP
                                        { ppOutput = hPutStrLn xmproc
                                        , ppTitle = xmobarColor "green" "" . shorten 50
@@ -123,11 +123,11 @@ layoutHook' = avoidStruts (tile ||| mtile ||| tab ||| full)
 startup :: X ()
 startup = do
     spawnOn "1-code" "gnome-terminal"
-    spawnOn "2-web" "firefox --new-instance"
-    spawnOn "3-mail" "firefox --new-instance"
+    spawnOn "2-web" "google-chrome --new-instance"
+    spawnOn "3-mail" "fmixerirefox --new-instance"
     spawnOn "4-spotify" "spotify"
     spawnOn "5-chat" "Mattermost"
-    spawn "/home/aren/work/dot_files/setup_monitors.sh"
+    spawnOn "5-chat" "hexchat"
 
 -------------------------------------------------------------------------------
 -- Terminal --
@@ -140,8 +140,8 @@ cmd_dmenu = "dmenu_run -b"
 cmd_lock = "slock"
 
 -- Multimedia --
-cmd_volDown = "amixer set Master 2-"
-cmd_volUp = "amixer set Master 2+"
+cmd_volDown = "amixer -c 2 set Speaker 1-"
+cmd_volUp = "amixer -c 2 set Speaker 1+"
 cmd_spotifyPrevious = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous > /dev/null"
 cmd_spotifyNext = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next > /dev/null" 
 cmd_spotifyPlayPause = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause > /dev/null" 

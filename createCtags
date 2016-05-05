@@ -1,0 +1,31 @@
+#! /bin/bash
+
+#
+#   Create a tags file for a specified directory tree.
+#
+
+#
+#   Define where the output tags file should go.  This should be a location
+#   that will be searched by default (like your home directory) or some
+#   location that your editor will look for the tags file in.
+#
+tagsFile=~/.tags
+
+#
+#   Define the base directory of the source code tree that you want to
+#   generate the tags file from.  This should be a full pathname if you want
+#   it to work from within any directory when you use the tags facility.
+#
+baseDir=/home/dmies/ngi1/Full_Source_1.14.10
+
+#
+# Go generate the tags file for the specified code tree.
+#
+rm -f $tagsFile
+
+ctags -R -a --extra=+fq --totals=yes -f $tagsFile $baseDir
+
+if [ $? -eq 0 ]
+then
+    echo "Tags successfully created in \"$tagsFile\""
+fi
