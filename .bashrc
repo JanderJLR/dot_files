@@ -108,9 +108,12 @@ fi
 
 #PYTHONPATH="${PYTHONPATH}:/home/aren/Work/rvi_backend"
 #export PYTHONPATH
-PATH=$PATH:/home/jason/.cabal/bin:/home/jason/bitbake/bin
+PATH=/home/jason/.cabal/bin:$PATH
+#LD_LIBRARY_PATH=/media/jason/work/qt5_wkspc/dist/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
 export PATH
 export QT_SELECT=5
 
 alias proxy_lava='ssh -L 8080:localhost:80 ngici-lava'
 alias proxy_jenkins='ssh -L 8080:localhost:8080 ngici-jenkins'
+export JAVA_HOME='/media/jason/work/dl/jdk1.7.0_80'

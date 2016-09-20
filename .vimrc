@@ -2,12 +2,16 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
+call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'kien/ctrlp.vim'
+Plugin 'shime/vim-livedown'
+call vundle#end()
 
 syntax on
 set number
@@ -30,5 +34,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 map <C-n> :NERDTreeToggle<CR>
 
-call vundle#end()
 filetype plugin indent on
+filetype plugin on
+execute pathogen#infect()
+call pathogen#helptags()
+let NERDTreeWinSize = 35 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
