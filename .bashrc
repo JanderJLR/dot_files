@@ -108,8 +108,8 @@ fi
 
 #PYTHONPATH="${PYTHONPATH}:/home/aren/Work/rvi_backend"
 #export PYTHONPATH
-PATH=/home/jason/.cabal/bin:$PATH
-#LD_LIBRARY_PATH=/media/jason/work/qt5_wkspc/dist/lib:$LD_LIBRARY_PATH
+PATH=/home/jason/.cabal/bin:/usr/local/bin:/opt/Qt/bin:$PATH
+LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
 export PATH
 export QT_SELECT=5

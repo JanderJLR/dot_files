@@ -38,6 +38,18 @@ filetype plugin indent on
 filetype plugin on
 execute pathogen#infect()
 call pathogen#helptags()
-let NERDTreeWinSize = 35 
+let NERDTreeWinSize = 40 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+func! WordProcessorMode()
+    setlocal textwidth=80
+    setlocal smartindent
+    setlocal spell spelllang=en_us
+    setlocal noexpandtab
+endfu
+
+com! WP call WordProcessorMode()
+
+set nobackup
+set noswapfile
 
